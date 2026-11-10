@@ -1,0 +1,181 @@
+*{box-sizing:border-box}
+:root{--rose:#e45d88;--rose2:#f29bb8;--wine:#702b48;--ink:#4d2638;--cream:#fff8fa;--night:#140b12}
+html{scroll-behavior:smooth}
+body{margin:0;min-height:100vh;background:#fff0f5;color:var(--ink);font-family:"DM Sans",Arial,sans-serif;overflow-x:hidden}
+button{font:inherit}
+#experience{position:relative;z-index:1}
+.scene{display:none;min-height:100svh;padding:64px 18px 34px;align-items:center;justify-content:center;animation:sceneIn .75s ease both}
+.scene.active{display:flex}
+.scene-welcome{background:radial-gradient(ellipse at 50% 40%,#fff9fb 0,#ffe7ef 48%,#f8c7d8 100%);overflow:hidden}
+.welcome-wrap{width:min(760px,100%);text-align:center;position:relative;z-index:2}
+.tiny-kicker,.eyebrow{font-size:10px;letter-spacing:.23em;text-transform:uppercase;font-weight:700;color:#b75b7d}
+.heart-dialogue{width:min(690px,100%);min-height:630px;margin:18px auto 0;display:grid;place-items:center;position:relative;filter:drop-shadow(0 24px 32px #a83b6327)}
+.heart-dialogue:before{content:"";position:absolute;inset:3% 4% 5%;background:linear-gradient(145deg,#fffdfd 0%,#fff0f5 65%,#fbdce7 100%);clip-path:polygon(50% 96%,43% 90%,14% 65%,4% 51%,1% 39%,3% 27%,10% 17%,22% 13%,34% 17%,50% 31%,66% 17%,78% 13%,90% 17%,97% 27%,99% 39%,96% 51%,86% 65%,57% 90%);border:1px solid #fff}
+.heart-dialogue:after{content:"";position:absolute;inset:5% 6% 7%;clip-path:polygon(50% 96%,43% 90%,14% 65%,4% 51%,1% 39%,3% 27%,10% 17%,22% 13%,34% 17%,50% 31%,66% 17%,78% 13%,90% 17%,97% 27%,99% 39%,96% 51%,86% 65%,57% 90%);border:1px solid #f1b7ca;pointer-events:none}
+.heart-dialogue-content{position:relative;z-index:2;width:min(440px,68%);padding:30px 0 62px;text-align:center}
+.heart-sparkle{font-size:25px;color:#d95a86}
+.script-label{font-family:"Playfair Display",serif;font-style:italic;color:#ad6680;font-size:16px;margin:8px 0}
+.heart-dialogue h1{font-family:"Playfair Display",serif;font-weight:600;font-size:clamp(34px,7vw,58px);line-height:1.08;color:#873a5a;margin:10px 0 14px}
+.heart-dialogue h1 em{font-weight:600;color:#e35c8b}
+.title-heart{font-family:Arial;color:#e35c8b;font-size:.55em;margin-left:8px}
+.welcome-copy{font-size:clamp(12px,2vw,15px);line-height:1.75;color:#805166;margin:0 auto 16px}
+.tap-note{font-size:10px;letter-spacing:.04em;color:#b27a91;margin-top:10px}
+.welcome-bottom{font:italic 14px "Playfair Display",serif;color:#a55a79;margin-top:-2px}
+.welcome-bottom span{color:#e45d88}
+.primary-btn,.secondary-btn,.replay-btn{border:0;border-radius:999px;padding:14px 25px;margin:10px 5px 4px;cursor:pointer;transition:transform .2s,box-shadow .2s;background:linear-gradient(115deg,#cf4777,#ed83a5);color:white;font-size:13px;font-weight:700;letter-spacing:.02em;box-shadow:0 9px 24px #c64b7735}
+.primary-btn:hover,.secondary-btn:hover,.replay-btn:hover{transform:translateY(-2px);box-shadow:0 12px 28px #c64b7745}
+.primary-btn span{margin-left:7px}.secondary-btn{background:#fff;color:#a33f68;border:1px solid #efbfd0;box-shadow:none}
+.music-control{position:fixed;z-index:30;top:14px;right:14px}
+.music-control button{border:1px solid #ffffff8a;background:#ffffffc9;backdrop-filter:blur(8px);border-radius:999px;padding:9px 13px;color:#9a3f64;font-size:13px;box-shadow:0 5px 18px #74324b17;cursor:pointer}
+.music-control span{font-size:10px;margin-left:4px}
+.heart-rain{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:0}
+.falling-heart{position:absolute;top:-35px;color:#c9214b;opacity:.62;animation:fall linear forwards;text-shadow:0 2px 7px #9b173b30}
+.scene-card{width:min(760px,100%);padding:clamp(25px,5vw,52px);text-align:center;background:#ffffffd9;border:1px solid #fff;border-radius:28px;box-shadow:0 22px 65px #8c31521a;backdrop-filter:blur(10px)}
+.wide-card{width:min(1000px,100%)}
+.scene-card h2{font:600 clamp(29px,5.8vw,46px)/1.15 "Playfair Display",serif;color:#9e4166;margin:10px 0 12px}
+.scene-intro{font:15px/1.8 "DM Sans",sans-serif;color:#805469;max-width:590px;margin:12px auto 25px}
+.photo-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;margin:30px auto 25px;max-width:860px}
+.polaroid{margin:0;padding:9px 9px 15px;background:#fff;box-shadow:0 8px 25px #6631491c;transform:rotate(var(--tilt, -1deg));animation:polaroidIn .7s both}
+.polaroid:nth-child(even){--tilt:1.5deg}.polaroid:nth-child(3n){--tilt:-2deg}
+.polaroid img{width:100%;aspect-ratio:1/1;display:block;object-fit:cover;background:#f9dce6}
+.polaroid figcaption{font:italic 12px/1.45 "Playfair Display",serif;color:#805166;padding:11px 3px 0;min-height:42px}
+.cake-stage{padding:10px 0 4px}
+.cake{position:relative;width:245px;height:205px;margin:10px auto 20px}
+.cake-bottom,.cake-middle,.cake-top{position:absolute;border-radius:50%/18%;left:8%;width:84%;box-shadow:0 9px 0 #c35b7d}
+.cake-bottom{height:72px;bottom:20px;background:linear-gradient(90deg,#d96991,#ffe1eb 50%,#d96991)}
+.cake-middle{height:62px;bottom:70px;left:15%;width:70%;background:linear-gradient(90deg,#f3a9c1,#fff0f5 50%,#f3a9c1);box-shadow:0 8px 0 #d17a9b}
+.cake-top{height:55px;top:43px;left:19%;width:62%;background:linear-gradient(90deg,#ffeaf1,#fff 50%,#ffeaf1);border:5px solid #e99ab7;z-index:2}
+.cake-top span{color:#d85a86;font-size:18px}
+.cake-plate{position:absolute;bottom:5px;left:2%;width:96%;height:20px;border-radius:50%;background:#fff1f5;border:2px solid #e7a0b8}
+.candles{position:absolute;z-index:4;top:4px;left:32%;width:36%;display:flex;justify-content:space-between}
+.candles i{height:43px;width:9px;border-radius:3px;background:repeating-linear-gradient(45deg,#fff 0 5px,#e780a4 5px 9px);position:relative}
+.candles i:before{content:"";position:absolute;top:-17px;left:1px;width:8px;height:14px;border-radius:50% 50% 45% 45%;background:#ffb34e;box-shadow:0 0 17px #ffb34e;animation:flame .5s infinite alternate}
+.candles.off i:before{display:none}
+.hidden{display:none!important}
+.hidden-message{max-width:510px;margin:20px auto;color:#a13e66;font:italic 17px/1.7 "Playfair Display",serif}
+.envelope{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;width:min(340px,90%);height:205px;margin:32px auto;background:linear-gradient(145deg,#e88dab,#ce5e85);border:0;border-radius:12px;box-shadow:0 18px 32px #8b34542b;cursor:pointer;color:#fff;overflow:hidden;transition:.5s}
+.envelope:before{content:"";position:absolute;inset:0;background:linear-gradient(35deg,transparent 49.5%,#f5b4c9 50%,transparent 51%),linear-gradient(-35deg,transparent 49.5%,#f5b4c9 50%,transparent 51%);opacity:.8}
+.envelope:after{content:"";position:absolute;top:0;left:0;right:0;margin:auto;width:0;height:0;border-left:170px solid transparent;border-right:170px solid transparent;border-top:105px solid #f2b1c7;transform-origin:top;transition:transform .6s;z-index:2}
+.envelope-seal{z-index:3;width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:#fff4f7;color:#c94f7a;font-size:20px;box-shadow:0 3px 10px #87314b30}
+.envelope-front-text,.envelope-hint{position:relative;z-index:3;font-family:"Playfair Display",serif}.envelope-front-text{font-size:20px}.envelope-hint{font:10px "DM Sans",sans-serif;letter-spacing:.12em;text-transform:uppercase}
+.envelope.open:after{transform:rotateX(180deg);z-index:0}.envelope.open{transform:translateY(5px)}
+.letter{max-width:590px;margin:20px auto 25px;padding:28px 30px;text-align:left;background:#fffaf7;border:1px solid #f1d5df;box-shadow:0 10px 28px #73334b13;font:15px/1.9 "Playfair Display",serif;color:#704458;animation:letterIn .8s both}
+.letter h3{font-size:22px;color:#a34068}.signature{text-align:right;color:#a34068;font-style:italic}.signature span{color:#e45d88}
+.heart-pulse-wrap{position:relative;width:230px;height:200px;margin:25px auto}
+.big-heart{position:absolute;inset:0;display:grid;place-items:center;font-size:145px;line-height:1;color:#e65b8c;text-shadow:0 0 28px #f7a7c4;animation:heartbeat 1.5s ease-in-out infinite}
+.orbit-heart{position:absolute;color:#df6590;font-size:26px;animation:orbit 4s ease-in-out infinite}.o1{top:5px;left:35px}.o2{right:20px;top:75px;animation-delay:.7s}.o3{bottom:0;left:55px;animation-delay:1.3s}
+.scene-dark{background:radial-gradient(ellipse at 50% 40%,#3b182b,#160b12 70%);color:#fff}
+.dark-card{background:#24111de8;border:1px solid #67314a;box-shadow:0 22px 80px #0007;color:#fff}
+.dark-card h2{color:#ffd1df}.dark-card .eyebrow{color:#e58eac}.dark-card .scene-intro{color:#e6bacb}
+.love-heart-art{width:min(460px,100%);margin:22px auto 12px;display:grid;grid-template-columns:repeat(17,minmax(0,1fr));grid-auto-rows:22px;gap:2px;justify-content:center;align-content:center}
+.love-heart-art span{font:600 clamp(7px,1.4vw,10px)/1 "DM Sans",sans-serif;color:#ffb5cc;white-space:nowrap;text-shadow:0 0 8px #ed6494;display:flex;align-items:center;justify-content:center;animation:wordGlow 2.4s ease-in-out infinite alternate}
+.art-caption{font:italic 12px/1.8 "Playfair Display",serif;color:#c989a4}
+.final-transition{background:linear-gradient(145deg,#fff9fb,#ffe4ed)}
+.glow-heart{font-size:112px;color:#e85e91;text-shadow:0 0 35px #f8a8c4;animation:heartbeat 1.4s infinite}
+.final-card{background:linear-gradient(145deg,#fffdfd,#fff0f5);width:min(900px,100%)}
+.final-heading{font-size:clamp(34px,7vw,62px)!important}
+.final-subtitle{font:italic 15px "Playfair Display",serif;color:#a85a79}
+.noor-word-art{display:flex;justify-content:center;align-items:center;gap:clamp(5px,1.4vw,15px);width:100%;margin:24px auto 20px;overflow:hidden}
+.letter-grid{display:grid;grid-template-columns:repeat(5,1fr);grid-template-rows:repeat(7,1fr);gap:2px;width:clamp(55px,12vw,105px);aspect-ratio:5/7}
+.letter-cell{background:linear-gradient(135deg,#d64e80,#f2a2bc);border-radius:2px;overflow:hidden;display:flex;align-items:center;justify-content:center;box-shadow:0 0 7px #e76b9735}
+.letter-cell span{font:700 5px/1 "DM Sans",sans-serif;color:#fff9fb;white-space:nowrap;transform:rotate(-28deg);opacity:.96}
+.letter-empty{visibility:hidden}
+.final-message{font:600 clamp(21px,4vw,29px) "Playfair Display",serif;color:#a13e67;margin:22px 0 10px}
+.final-message span{color:#e45d88}
+.final-small{max-width:590px;margin:0 auto;color:#805166;font:15px/1.8 "Playfair Display",serif}
+.final-signature{margin-top:24px;color:#b75b7d;font:italic 17px "Playfair Display",serif}
+.replay-btn{background:transparent;border:1px solid #e7a8bf;color:#a4476c;box-shadow:none;margin-top:24px}
+@keyframes sceneIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@keyframes fall{to{transform:translate3d(var(--drift),110vh,0) rotate(360deg);opacity:0}}
+@keyframes polaroidIn{from{opacity:0;transform:translateY(25px) rotate(0)}to{opacity:1;transform:translateY(0) rotate(var(--tilt,-1deg))}}
+@keyframes heartbeat{0%,100%{transform:scale(1)}50%{transform:scale(1.12)}}
+@keyframes flame{from{transform:scale(.9) rotate(-4deg)}to{transform:scale(1.12) rotate(4deg)}}
+@keyframes orbit{50%{transform:translateY(-12px) scale(1.15)}}
+@keyframes wordGlow{from{opacity:.65}to{opacity:1}}
+@keyframes letterIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+@media(max-width:650px){
+ .scene{padding:58px 12px 24px}.scene-card{padding:26px 17px;border-radius:22px}
+ .heart-dialogue{min-height:610px;margin-top:8px}.heart-dialogue-content{width:66%;padding:22px 0 55px}
+ .heart-dialogue h1{font-size:clamp(32px,8vw,44px)}.welcome-copy{font-size:12px;line-height:1.65}
+ .photo-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:24px auto}
+ .polaroid{padding:7px 7px 12px}.polaroid figcaption{font-size:11px;min-height:38px}
+ .love-heart-art{grid-auto-rows:clamp(13px,3.8vw,19px);gap:1px}.love-heart-art span{font-size:clamp(5px,1.5vw,8px)}
+ .letter{padding:22px 19px;font-size:14px}
+}
+@media(max-width:390px){.heart-dialogue{min-height:570px}.heart-dialogue-content{width:65%;padding-bottom:50px}.welcome-copy{font-size:11px}.primary-btn{padding:13px 19px;font-size:12px}.love-heart-art{grid-template-columns:repeat(17,minmax(0,1fr))}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important}}
+
+/* Unified rose-night palette across every scene. */
+:root{--rose:#e96b98;--rose2:#f6a9c3;--wine:#4d1933;--ink:#ffe5ee;--cream:#fff3f7;--night:#170913}
+body{background:radial-gradient(ellipse at 50% 0%,#542038 0,#260f1c 48%,#130810 100%);color:#ffe7ef}
+.scene{background:radial-gradient(ellipse at 50% 28%,#542039 0,#2a1020 52%,#160a13 100%)}
+.scene-card,.wide-card,.final-transition,.final-card{background:linear-gradient(145deg,rgba(76,29,51,.94),rgba(34,13,25,.96));border:1px solid #9e4c6b66;box-shadow:0 24px 80px #08030988;color:#ffe7ef}
+.scene-card h2,.final-heading{color:#ffd2e1!important}
+.scene-intro{color:#f0c2d2}
+.eyebrow{color:#f29ab8}
+.photo-grid .polaroid{background:#fff3f7;color:#744057}
+.music-control button{background:#41192ccc;color:#ffe8ef;border-color:#d77b9a88}
+.heart-rain{z-index:5}
+.falling-heart{color:#ff477c;opacity:.72;text-shadow:0 2px 12px #ff2c6c88,0 0 5px #ffd5e3;will-change:transform}
+.scene-welcome{background:radial-gradient(ellipse at 50% 35%,#59213d 0,#321327 56%,#170a13 100%)}
+.heart-dialogue:before{background:linear-gradient(145deg,#fff0f5 0%,#fbd4e1 65%,#e99bb7 100%)}
+.heart-dialogue:after{border-color:#fff0f5}
+.welcome-copy{font-size:clamp(14px,2.1vw,17px);color:#78445b}
+.tiny-kicker{font-size:clamp(12px,1.8vw,14px);color:#ffc0d3}
+.welcome-bottom{color:#ffd1df}
+.dark-card{background:linear-gradient(145deg,rgba(76,29,51,.94),rgba(34,13,25,.96));border:1px solid #c46a8b66}
+.scene-dark{background:radial-gradient(ellipse at 50% 28%,#59213d 0,#321327 56%,#170a13 100%)}
+
+/* Realistic layered celebration cake, with piped frosting, fruit and a cake slice. */
+.cake-stage{padding:20px 0 16px;perspective:900px}
+.cake-scene{position:relative;width:min(440px,94vw);height:340px;margin:0 auto;filter:drop-shadow(0 22px 20px #09030988);isolation:isolate}
+.cake-glow{position:absolute;width:90%;height:55%;left:5%;bottom:5%;background:radial-gradient(ellipse,#ff9bbd42,transparent 70%);filter:blur(13px)}
+.cake-plate{position:absolute;left:4%;right:4%;bottom:19px;height:42px;border-radius:50%;background:linear-gradient(180deg,#fff9f7,#d9a8b8 55%,#fff0f4 80%,#a75c78);box-shadow:0 13px 20px #08030888,inset 0 3px 5px #fff;z-index:1}
+.cake-plate span{position:absolute;inset:8px 7%;border-radius:50%;border:2px solid #fff8;}
+.cake-tier{position:absolute;left:50%;transform:translateX(-50%);border-radius:18px 18px 28px 28px;box-shadow:inset 0 7px 10px #fff8,inset 0 -12px 15px #7d304d30,0 10px 12px #12060c55;overflow:visible}
+.tier-bottom{width:78%;height:112px;bottom:47px;z-index:2;background:linear-gradient(90deg,#a94368,#f8c2d1 18%,#fff0f2 50%,#f2b3c6 82%,#a94368);border:2px solid #ffe2ea}
+.tier-middle{width:65%;height:92px;bottom:139px;z-index:3;background:linear-gradient(90deg,#bd5a7c,#ffe2e9 20%,#fff8f6 52%,#f6c1cf 82%,#a84467);border:2px solid #ffe6ec}
+.tier-top{width:51%;height:76px;bottom:218px;z-index:4;border-radius:50% 50% 16px 16px;background:linear-gradient(90deg,#c05b7c,#fff0f3 22%,#fff 50%,#f8cbd6 80%,#ae4c70);border:2px solid #fff0f4}
+.top-frosting{position:absolute;left:-2%;right:-2%;top:-10px;height:30px;border-radius:50%;background:linear-gradient(180deg,#fff,#ffe8ee 65%,#e99bb3);box-shadow:inset 0 -3px 4px #c45a7d44}
+.cake-script{position:absolute;top:27px;left:0;right:0;text-align:center;font:italic 22px "Playfair Display",serif;color:#a83f65;text-shadow:0 1px #fff}
+.berry{position:absolute;top:2px;width:16px;height:18px;border-radius:60% 60% 55% 55%;background:radial-gradient(circle at 35% 25%,#ffced7 0 8%,#d72d55 35%,#7e1636 100%);box-shadow:0 2px 3px #74213c;z-index:3}
+.berry:after{content:"✦";position:absolute;top:-8px;left:4px;font-size:10px;color:#668d4b}
+.berry-one{left:24%}.berry-two{left:48%;top:-4px}.berry-three{right:22%;top:4px}
+.drip{position:absolute;top:-2px;width:18px;height:24px;border-radius:0 0 12px 12px;background:linear-gradient(90deg,#fff1f4,#f7c4d2);box-shadow:inset 2px 0 3px #fff}
+.drip-a{left:22%;height:30px}.drip-b{left:55%;height:22px}.drip-c{right:18%;height:34px}
+.cream-dots{position:absolute;left:6%;right:6%;bottom:13px;height:12px;background:radial-gradient(circle,#fff 0 3px,transparent 4px) 0 0/23px 12px repeat-x}
+.bottom-frosting{position:absolute;top:-5px;left:0;right:0;height:22px;border-radius:50%;background:linear-gradient(180deg,#fff,#fbd8e1);box-shadow:0 4px 5px #9c496144}
+.cake-pearls{position:absolute;left:4%;right:4%;bottom:17px;height:12px;background:radial-gradient(circle,#fff 0 3px,transparent 4px) 0 0/19px 12px repeat-x}
+.cake-candles{position:absolute;z-index:6;left:35%;width:30%;bottom:281px;display:flex;justify-content:space-around;align-items:end}
+.cake-candles i{width:9px;height:47px;border-radius:4px;background:repeating-linear-gradient(135deg,#fff 0 6px,#e85b89 6px 11px);box-shadow:inset -2px 0 3px #8f3150;position:relative}
+.cake-candles i:nth-child(2),.cake-candles i:nth-child(4){height:39px}
+.cake-candles i:before{content:"";position:absolute;top:-18px;left:0;width:9px;height:17px;border-radius:55% 55% 45% 45%;background:radial-gradient(ellipse at 50% 70%,#fff9bd 0 18%,#ffb33e 50%,#f45b36 85%);filter:drop-shadow(0 0 9px #ffb34d);animation:flame .45s infinite alternate}
+.cake-candles.off i:before{opacity:0;transform:scale(.2);transition:.3s}
+.cake-slice{position:absolute;z-index:7;right:7%;bottom:60px;width:76px;height:92px;background:linear-gradient(90deg,#fff0f4 0 28%,#eaa0b7 30% 34%,#fff5f5 36% 70%,#e5a0b7 72%);clip-path:polygon(0 0,100% 28%,100% 100%,0 72%);opacity:0;transform:translate(0,0) rotate(0);filter:drop-shadow(0 9px 7px #08030966)}
+.cake-cut .cake-slice{opacity:1;animation:sliceOut 1.1s .2s forwards}
+.cake-cut .tier-top{transform:translateX(-54%) rotate(-1deg)}
+.cake-cut .tier-middle{filter:brightness(1.04)}
+@keyframes sliceOut{to{transform:translate(65px,-8px) rotate(9deg)}}
+
+/* A romantic paper envelope and a readable, scrollable full letter. */
+.envelope{background:linear-gradient(145deg,#f8d5df,#c86b8b 65%,#8f3b5b);box-shadow:0 24px 45px #09030a88;border:1px solid #ffeaf0;overflow:visible}
+.envelope:before{background:linear-gradient(35deg,transparent 49.5%,#f9dce5 50%,transparent 51%),linear-gradient(-35deg,transparent 49.5%,#e9aabe 50%,transparent 51%);filter:drop-shadow(0 5px 4px #6d2440)}
+.envelope:after{border-top-color:#ffe5ec;filter:drop-shadow(0 4px 4px #8b3c5b66)}
+.letter{max-height:65vh;overflow-y:auto;background:linear-gradient(145deg,#fff8f5,#ffedf2);border:1px solid #e8b5c7;border-radius:5px;box-shadow:0 20px 45px #09030966;color:#60344a;padding:clamp(22px,4vw,38px);font-size:clamp(14px,1.8vw,16px);line-height:1.9}
+.letter h3{font-size:clamp(21px,3vw,27px);margin-top:0}.letter h4{font:italic 19px "Playfair Display",serif;color:#9e4166}
+.letter p{margin:0 0 18px}.letter .signature{margin-top:26px}.postscript{border-top:1px solid #e9c4d0;padding-top:16px;font-style:italic}
+
+/* Responsive multilingual rose made from text, inspired by the linked text-geometry concept. */
+.flower-card{width:min(850px,100%)}
+.love-rose-art{width:min(460px,100%);margin:12px auto 4px;border-radius:22px;overflow:hidden;background:#060208;border:1px solid #67314a;box-shadow:0 0 50px #e96b9838,0 18px 50px #0008;line-height:0}
+.love-rose-art canvas{display:block;width:100%;height:auto}
+.flower-closing{font:italic clamp(14px,2vw,17px)/1.7 "Playfair Display",serif;color:#f4c0d2;max-width:580px;margin:10px auto 20px}
+.art-caption{color:#e7a6bc}
+.replay-btn{color:#ffd9e5;border-color:#d77c9b;background:#4d1d35aa}
+@media(max-width:650px){
+ .cake-scene{height:300px;transform:scale(.88);transform-origin:top center;margin-bottom:-25px}
+ .cake-candles{bottom:253px}
+ .tier-top{bottom:198px}.tier-middle{bottom:127px}.tier-bottom{bottom:43px}.cake-plate{bottom:15px}
+ .love-rose-art{width:100%}
+ .letter{max-height:62vh}
+}

@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#160b12">
+  <meta name="description" content="A little birthday world made with love for Noor.">
+  <title>For My dear Noor, my cutie paatootie  With Love ♥</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <audio id="backgroundMusic" loop preload="metadata">
+    <source src="assets/music/birthday-song.mp3" type="audio/mpeg">
+  </audio>
+  <div class="heart-rain" id="heartRain" aria-hidden="true"></div>
+  <div class="music-control"><button id="musicToggle" aria-label="Pause background music" title="Music">♫ <span>Music on</span></button></div>
+
+  <main id="experience">
+    <section class="scene scene-welcome active" id="scene-1">
+      <div class="welcome-wrap">
+        <div class="tiny-kicker">A little universe, made just for you</div>
+        <div class="heart-dialogue">
+          <div class="heart-dialogue-content">
+            <span class="heart-sparkle">✦</span>
+            <p class="script-label">To my favourite person</p>
+            <h1>Happy Birthday,<br><em>Noor mere Jaan</em><span class="title-heart">♥</span></h1>
+            <p class="welcome-copy">If I could wrap the whole world in a little gift, I would put every beautiful thing inside it just for you. You deserve all the happiness, all the peace, and every dream your heart quietly wishes for. Today is about celebrating you — your smile, your kindness, and the light you bring into my world. I made this little place with love, just for you. Take my hand and let's begin.</p>
+            <button class="primary-btn" data-next="2">Open your surprise <span>♡</span></button>
+            <div class="tap-note">Tap anywhere on the heart to begin the music and journey</div>
+          </div>
+        </div>
+        <div class="welcome-bottom">Made with love, only for Noor <span>♥</span></div>
+      </div>
+    </section>
+
+    <section class="scene" id="scene-2">
+      <div class="scene-card wide-card">
+        <p class="eyebrow">A little journey through us</p>
+        <h2>Our Little Memories</h2>
+        <p class="scene-intro">Every picture holds a moment, and every moment means a little more because it's with you.</p>
+        <div class="photo-grid">
+          <figure class="polaroid"><img src="assets/images/photo-01.jpeg" alt="A memory with Noor" loading="lazy"><figcaption>A moment I wish I could pause forever.</figcaption></figure>
+          <figure class="polaroid"><img src="assets/images/photo-02.jpeg" alt="A memory with Noor" loading="lazy"><figcaption>Your smile makes every picture brighter.</figcaption></figure>
+          <figure class="polaroid"><img src="assets/images/photo-03.jpeg" alt="A memory with Noor" loading="lazy"><figcaption>A little memory, a lot of happiness.</figcaption></figure>
+          <figure class="polaroid"><img src="assets/images/photo-04.jpeg" alt="A memory with Noor" loading="lazy"><figcaption>One of those moments close to my heart.</figcaption></figure>
+          <figure class="polaroid"><img src="assets/images/photo-05.jpeg" alt="A memory with Noor" loading="lazy"><figcaption>If I could, I would relive this day again.</figcaption></figure>
+          <figure class="polaroid"><img src="assets/images/photo-06.jpeg" alt="A memory with Noor" loading="lazy"><figcaption>You make ordinary moments feel special.</figcaption></figure>
+          <figure class="polaroid"><img src="assets/images/photo-07.jpeg" alt="A memory with Noor" loading="lazy"><figcaption>A memory I will always keep close.</figcaption></figure>
+          <figure class="polaroid"><img src="assets/images/photo-08.jpeg" alt="A memory with Noor" loading="lazy"><figcaption>My favourite kind of beautiful.</figcaption></figure>
+          <figure class="polaroid"><img src="assets/images/photo-09.jpeg" alt="A memory with Noor" loading="lazy"><figcaption>A small moment from our big story.</figcaption></figure>
+          <figure class="polaroid"><img src="assets/images/photo-010.jpeg" alt="A memory with Noor" loading="lazy"><figcaption>Here's to all the moments still waiting for us.</figcaption></figure>
+          <figure class="polaroid"><img src="assets/images/photo-011.jpeg" alt="A memory with Noor" loading="lazy"><figcaption>Some memories never lose their magic.</figcaption></figure>
+          <figure class="polaroid"><img src="assets/images/photo-012.jpeg" alt="A memory with Noor" loading="lazy"><figcaption>And my favourite chapter is still being written.</figcaption></figure>
+        </div>
+        <button class="primary-btn" data-next="3">Keep our story going <span>→</span></button>
+      </div>
+    </section>
+
+    <section class="scene" id="scene-3">
+      <div class="scene-card">
+        <p class="eyebrow">A wish just for you</p><h2>Make a Wish, Noor</h2>
+        <p class="scene-intro">May this new chapter bring you more reasons to smile than you can count.</p>
+        <div class="cake-stage">
+          <div class="cake-scene" id="cakeScene" aria-label="A three-tier strawberry birthday cake with candles">
+            <div class="cake-glow"></div>
+            <div class="cake-candles" id="cakeCandles"><i></i><i></i><i></i><i></i><i></i></div>
+            <div class="cake-tier tier-top"><div class="top-frosting"></div><div class="berry berry-one"></div><div class="berry berry-two"></div><div class="berry berry-three"></div><span class="cake-script">Noor</span></div>
+            <div class="cake-tier tier-middle"><div class="drip drip-a"></div><div class="drip drip-b"></div><div class="drip drip-c"></div><div class="cream-dots"></div></div>
+            <div class="cake-tier tier-bottom"><div class="bottom-frosting"></div><div class="cake-pearls"></div></div>
+            <div class="cake-plate"><span></span></div>
+            <div class="cake-slice" aria-hidden="true"></div>
+          </div>
+        </div>
+        <button class="primary-btn" id="wishButton">Make a wish <span>✧</span></button>
+        <p id="wishMessage" class="hidden-message">Close your eyes, make your wish, and let the universe hear it. You deserve every beautiful thing. ♥</p>
+        <button class="secondary-btn hidden" data-next="4" id="afterWish">There's more for you →</button>
+      </div>
+    </section>
+
+    <section class="scene" id="scene-4">
+      <div class="scene-card">
+        <p class="eyebrow">A little something from my heart</p><h2>A Letter for You</h2>
+        <p class="scene-intro">Some things are better said slowly, from the heart.</p>
+        <button class="envelope" id="envelope" aria-label="Open your birthday letter">
+          <span class="envelope-seal">♥</span><span class="envelope-front-text">For my dearest Noor</span><span class="envelope-hint">Tap to open</span>
+        </button>
+        <article class="letter hidden" id="letter">
+          <h3>To My Favourite Girl Noor ❤️</h3>
+          <h4>My Dearest Noor</h4>
+          <p>I honestly don't know how you do it but somehow you manage to live rent free in my head 24/7 Like seriously girl don't you have anything better to do than being this ridiculously adorable 😂❤️</p>
+          <p>If being beautiful was a crime you'd be serving a lifetime sentence And if stealing hearts was a profession congratulations you've got yourself a full time job because mine is already yours No refunds no exchanges 😌</p>
+          <p>I wish I could explain how stupidly happy I get just by seeing your name pop up on my screen One notification from you and suddenly I'm smiling at my phone like an idiot People probably think I've lost my mind but honestly I don't care You are my favourite reason to look at my phone ❤️</p>
+          <p>And Noor your name literally means light and I swear that's exactly what you are You make ordinary moments feel special boring days feel exciting and my world a little brighter just by being in it</p>
+          <p>I want to annoy you with unnecessary kisses steal your attention when you're busy flirt with you even when we're 80 years old and still give you butterflies like it's our first conversation</p>
+          <p>I can't promise I'll always be smooth because let's be honest my flirting skills are questionable 😂 but I can promise that I'll keep finding new ways to make you smile</p>
+          <p>So here's a little reminder you're cute you're gorgeous you're my favourite distraction and you're dangerously good at making me fall for you over and over again</p>
+          <p>Now stop being so pretty I'm trying to concentrate here and you're making it impossible 🙄❤️</p>
+          <p class="signature">Yours<br><br>The guy who's hopelessly ridiculously and cheesily obsessed with you ❤️</p>
+          <p class="postscript"><strong></strong> If I had a rupee for every time I thought about you I'd be rich enough to buy you all the chocolates in the world.</p>
+        </article>
+        <button class="primary-btn" data-next="5">Continue our little journey →</button>
+      </div>
+    </section>
+
+    <section class="scene" id="scene-5">
+      <div class="scene-card">
+        <p class="eyebrow">A little reminder, whenever you need it</p><h2>Something From My Heart</h2>
+        <div class="heart-pulse-wrap"><div class="big-heart">♥</div><span class="orbit-heart o1">♥</span><span class="orbit-heart o2">♡</span><span class="orbit-heart o3">♥</span></div>
+        <p class="scene-intro">If you ever wonder how much you mean to me, remember this little heart. It carries more love than words could ever explain.</p>
+        <button class="primary-btn" id="heartButton">Send me a little love <span>♥</span></button>
+        <button class="secondary-btn hidden" data-next="6" id="afterHeart">One more thing I made for you →</button>
+      </div>
+    </section>
+
+    <section class="scene scene-dark scene-flower" id="scene-6">
+      <div class="scene-card dark-card flower-card">
+        <p class="eyebrow">A thousand ways to say the same thing</p><h2>A Rose Written in Every Language</h2>
+        <p class="scene-intro">Different languages. Different words. One feeling that always leads back to you, Noor.</p>
+        <div class="love-rose-art" id="loveRoseArt" role="img" aria-label="An animated rose with stem and leaves, formed entirely from the words I love you in 34 languages"></div>
+        <p class="art-caption">I love you · Te amo · Je t’aime · Ich liebe dich · 我爱你 · أحبك · Я тебя люблю</p>
+        <p class="flower-closing">Every language in the world, and still not enough ways to say how much I love you. ♥</p>
+        <button class="replay-btn" id="replayButton">Replay our little story ↺</button>
+      </div>
+    </section>
+  </main>
+  <script src="rose.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
